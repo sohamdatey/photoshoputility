@@ -1,4 +1,4 @@
-package com.ystudio.imageedito.imageUtils;
+package com.ystudio.imageeditor.imageUtils;
 
 import java.awt.Rectangle;
 

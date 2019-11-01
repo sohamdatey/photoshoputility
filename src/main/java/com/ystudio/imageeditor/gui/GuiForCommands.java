@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.ystudio.imageedito.imagehandler.ImageEditor;
+import com.ystudio.imageeditor.imagehandler.ImageEditor;
 
 public class GuiForCommands extends JFrame implements ActionListener {
 

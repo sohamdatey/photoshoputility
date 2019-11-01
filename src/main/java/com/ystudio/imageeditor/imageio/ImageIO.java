@@ -17,7 +17,7 @@ public class ImageIO {
 		
 		String imageEditorOutput =directoryLocation +"/sohamRocks";
 		File directory = new File(imageEditorOutput);
-		if (! directory.exists()){
+		if (!directory.exists()){
 		    directory.mkdir();
 		    // If you require it to make the entire directory path including parents,
 		    // use directory.mkdirs(); here instead.
