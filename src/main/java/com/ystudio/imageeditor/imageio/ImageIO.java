@@ -6,6 +6,7 @@ import ij.ImagePlus;
 import ij.io.FileSaver;
 
 public class ImageIO {
+	
 	public static File[] listOfImagesInFolder(String directoryLocation) {
 		final File folder = new File(directoryLocation);
 		return folder!=null && folder.listFiles().length>0 ?folder.listFiles():new File[0];

@@ -12,6 +12,7 @@
 			<artifactId>ij</artifactId>
 			<version>1.51h</version>
 		</dependency>
-	</dependencies>
+       
+    </dependencies>
 
 </project>
