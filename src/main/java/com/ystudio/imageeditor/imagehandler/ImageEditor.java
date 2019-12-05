@@ -21,11 +21,14 @@ public class ImageEditor {
 	 */
 	private static int appendText(String directoryLocation, Font font)  {
 		int filesProcessed = 0;
-		int fileNameLocationAdjusterX = 120;
-		int fileNameLocationAdjusterY = 10;
 
 		for (final File fileEntry : ImageIO.listOfImagesInFolder(directoryLocation)) {
 			
+			String[] extentions = fileEntry.getName().split("(\\.+)");
+			String appendText= fileEntry.getName().replace("." + extentions[extentions.length - 1], "");
+
+			int fileNameLocationAdjusterX = (120/8)*appendText.length();
+			int fileNameLocationAdjusterY = 10;
 			
 			ImagePlus imgPlus = new ImagePlus(directoryLocation + "/" + fileEntry.getName());
 			
@@ -35,7 +38,7 @@ public class ImageEditor {
 			int height = imgProcessor.getHeight();
 			int textStartingPointX = width - fileNameLocationAdjusterX;
 			int textStartingPointY = height - fileNameLocationAdjusterY;
-
+			
 			Rectangle workingRectangle = new Rectangle(textStartingPointX, textStartingPointY,
 					fileNameLocationAdjusterX, fileNameLocationAdjusterY);
 
@@ -55,8 +58,7 @@ public class ImageEditor {
 
 			// width>height landscape
 			// draw file name
-			String[] extentions = fileEntry.getName().split("(\\.+)");
-			imgProcessor.drawString(fileEntry.getName().replace("." + extentions[extentions.length - 1], ""),
+			imgProcessor.drawString(appendText,
 					textStartingPointX, textStartingPointY);
 
 			imgPlus.setProcessor(imgProcessor);
